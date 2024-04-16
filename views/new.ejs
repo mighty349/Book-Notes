@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add book</title>
+    <link rel="stylesheet" href="/styles/new.css">
+</head>
+<body>
+    <div class="header">
+        <a href="/home"><button>Home</button></a>
+        <a href="/"><button>Log Out</button></a>
+    </div>
+    <%if(locals.modify) {%>
+        <section class="new_book">
+            <form action="/modify/<%= modify.book_label%>" method="post">
+                <h1>Update Book</h1>
+                <input type="text" class="title" name="title" required placeholder="Title" value="<%=modify.book_name%>">
+                <input type="date" name="date" class="date" required placeholder="Date" value="<%=modify.readtime%>">
+                <input type="number" name="rating" class="rating" required placeholder="Rating" value="<%=modify.rating%>">
+                <input type="text" name="isbn" class="isbn" required placeholder="ISBN_ID" value="<%=modify.book_id%>">
+                <textarea name="preview" class="preview" cols="30" rows="10" required placeholder="Preview"><%= modify.preview %></textarea>
+                <textarea name="notes" class="notes" cols="30" rows="10" required placeholder="Notes"><%= modify.notes %></textarea>
+                <button type="submit">update details</button>
+            </form>
+        </section>
+            <% } else { %>
+                    <section class="new_book">
+                        <form action="/add" method="post">
+                            <h1>Add a new Book</h1>
+                            <input type="text" class="title" name="title" required placeholder="Title">
+                            <input type="date" name="date" class="date" required placeholder="Date">
+                            <input type="number" name="rating" class="rating" required placeholder="Rating">
+                            <input type="text" name="isbn" class="rating" required placeholder="ISBN_ID">
+                            <textarea name="preview" class="preview" cols="30" rows="10" required placeholder="Preview"></textarea>
+                            <textarea name="notes" class="notes" cols="30" rows="10" required placeholder="Notes"></textarea>
+                            <button type="submit"> Add To Read Books</button>
+                        </form>
+                    </section>
+            <% } %>
+
+</body>
+</html>

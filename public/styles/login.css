@@ -1,0 +1,202 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('/images/back2.jpg'); /* Replace with your nature-themed background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    animation: fadeInDown 1s ease-in-out;
+    background: transparent;
+  }
+  
+  .header .left img {
+    height: 100px;
+    margin-right: 1rem;
+    border-radius: 5px;
+    box-shadow: 1px 1px rgb(43, 40, 40);
+  }
+  
+  .header .middle {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header .middle .search {
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-right: 0.5rem;
+    border: 2px solid rgb(174, 255, 151);
+    box-shadow: 1px 1px rgb(174, 255, 151);
+    width: 500px;
+    outline: none;
+    font-size: 18px;
+  }
+  .fa-solid{
+    padding: 5px;
+    background: rgb(174, 255, 151);
+    border-radius: 50%;
+  }
+  .fa-solid:hover{
+    background-color: white;
+    border: 1px solid beige;
+  }
+  .header .right{
+    padding-right: 40px;
+  }
+  .header .right button {
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    border:1.8px solid rgb(174, 255, 151);
+    border-radius: 5px;
+    color: rgb(4, 4, 4);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .header .right button:hover {
+    background-color: rgb(174, 255, 151);
+    color: white;
+  }
+  
+  .login {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 2rem;
+    margin: 0 auto;
+    background: transparent;
+  }
+  
+  .login form {
+    margin:5% auto;
+    flex-basis: 35%;
+    height: 500px;
+    padding: 2rem;
+    border: 2px solid rgb(174, 255, 151);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeInLeft 1s ease-in-out;
+    text-align: center;
+    background: transparent;
+  }
+  
+  .login form input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 5rem;
+    border: 2px solid rgb(174, 255, 151);
+    border-radius: 5px;
+    outline: none;
+    font-size: 20px;
+
+  }
+  .login form button{
+    width: 30%;
+    padding: 0.5rem;
+    margin-bottom: 5rem;
+    border: 1px solid rgb(174, 255, 151);
+    border-radius: 5px;
+    outline: none;
+    color:black ;
+    font-size: 18px;
+    transition: background-color 10ms;
+  }
+  .login form button:hover{
+    background-color:rgb(174, 255, 151);
+  }
+  .login form h3{
+    color: white;
+    margin-bottom: 4px;
+  }
+
+  
+  .login .desc_img {
+    flex-basis: 40%;
+    padding: 2rem;
+    animation: fadeInRight 1s ease-in-out;
+  }
+  
+  .login .desc_img img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* Animations */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .header, .login {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .login form, .login .desc_img {
+      flex-basis: 80%;
+      margin-bottom: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .header .left img {
+      height: 40px;
+    }
+  
+    .header .middle .search {
+      padding: 0.3rem;
+    }
+  
+    .header .right button {
+      padding: 0.3rem 0.6rem;
+    }
+  
+    .login form, .login .desc_img {
+      flex-basis: 90%;
+    }
+  }
+  

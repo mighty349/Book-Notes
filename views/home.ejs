@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/styles/home.css">
+    <script src="https://kit.fontawesome.com/f96c943713.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="left">
+          <img src="/images/Book-website-Logo.png" alt="sorry" class="logo1">
+          <img src="/images/desc.png" alt="sorry" class="logo2">
+        </div>
+        <div class="middle">
+           <input type="text" class="search" name="search" placeholder="search">
+           <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+        </div>
+        <div class="right">
+         <a href="/new"><button>Add new Book</button></a>
+         <a href="/logout"><button>Log Out</button></a>
+        </div>
+     </header>
+
+     <section class="book_section">
+      <% for(let item of items ){ %>
+        <div class="book_items">
+        <img src="https://covers.openlibrary.org/b/olid/<%=item.book_id%>.jpg" alt="sorry">
+        <h2 class="title"><%=item.book_name%></h2>
+        <h3>Date read:<%= item.readtime%></h3>
+        <h3>How strong i recommend it:<%=item.rating %>/10</h3>
+        <div class="item_desc">
+          <%=item.preview %>
+        </div>
+        <a href="/view/<%=item.book_name %>"><h2>Read my Notes</h2></a>
+        <a href="/delete/<%=item.book_name %>"><button>delete </button></a>
+        <a href="/update/<%=item.book_name%>"><button>update</button></a>
+      </div>
+     <% } %>
+     </section>
+</body>
+</html>
